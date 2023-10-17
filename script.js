@@ -5,10 +5,10 @@ const longoBt = document.querySelector('.app__card-button--longo')
 const banner = document.querySelector('.app__image')
 const titulo = document.querySelector('.app__title')
 const botoes = document.querySelectorAll('.app__card-button')
-const startPauseIcon = document.querySelector('.app__card-primary-butto-icon')
 const startPauseBt = document.querySelector('#start-pause')
 const musicaFocoInput = document.querySelector('#alternar-musica')
 const iniciarOuPausarBt = document.querySelector('#start-pause span')
+const iniciarOuPausarBtIcone = document.querySelector(".app__card-primary-butto-icon") 
 const tempoNaTela = document.querySelector('#timer')
 
 const musica = new Audio('/sons/luna-rise-part-one.mp3')
@@ -97,14 +97,14 @@ function iniciarOuPausar() {
     audioPlay.play()
     intervaloId = setInterval(contagemRegressiva, 1000)
     iniciarOuPausarBt.textContent = "Pausar"
-    startPauseIcon.setAttribute('src', `/imagens/pause.png`)
+    iniciarOuPausarBtIcone.setAttribute('src', `/imagens/pause.png`)
 }
 
 function zerar() {
     clearInterval(intervaloId) 
-    intervaloId = null
     iniciarOuPausarBt.textContent = "Começar"
-    startPauseIcon.setAttribute('src', `/imagens/play_arrow.png`)
+    iniciarOuPausarBtIcone.setAttribute('src', `/imagens/play_arrow.png`)
+    intervaloId = null
 }
 
 function mostrarTempo() {
